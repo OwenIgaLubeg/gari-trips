@@ -23,7 +23,7 @@
 }
 
 .section__subheader {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
   font-size: 1.75rem;
   font-weight: 700;
   font-family: var(--header-font);
@@ -102,7 +102,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(163, 223, 130); /* ← Navbar background */
+  background-color: rgb(197, 255, 190); /* ← Navbar background */
 }
 
 .nav__logo a img {
@@ -126,7 +126,7 @@ nav {
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
-  background-color: rgb(163, 223, 130); /* ← Mobile menu background */
+  background-color: rgb(197, 255, 190); /* ← Mobile menu background */
   transition: transform 0.5s;
   z-index: -1;
 }
@@ -605,7 +605,7 @@ nav {
   font-weight: 500;
   color: var(--text-light);
   text-align: center;
-  background-color: rgb(163, 223, 130); /* ← Footer background */
+  background-color: rgb(197, 255, 190); /* ← Footer background */
 }
 
 @media (width > 540px) {
