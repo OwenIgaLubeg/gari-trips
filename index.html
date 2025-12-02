@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Gari Trips Uganda</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">
+            <img src="gari-trips-images/gari-trips-logo-black.png" alt="logo" />
+          </a>
+        </div>
+        <div>
+          <a href="https://wa.me/256704018220" class="nav-whatsapp" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp" style="font-size: 1.5rem; color: white;"></i>
+            </a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#tour">Safari Packages</a></li>
+        <li><a href="#contact">Contacts us</a></li>
+        <li>
+          <button class="btn">
+            Plan a Trip
+            <span><i class="ri-arrow-right-long-line"></i></span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <header class="section__container header__container" id="home">
+      <div class="header__image">
+        <img src="gari-trips-images/gorilla-home-page-pic.jpg" alt="header" />
+      </div>
+      <div class="header__content">
+        <!--<img src="assets/plane.png" alt="plane" />-->
+        <h1>Come visit Mountain Gorillas.</h1>
+        <p class="section__description">
+          Experience unforgettable gorilla safaris with East Africa’s trusted travel experts. We deliver premium,
+          personalized wildlife adventures for discerning travelers seeking rare, life-changing encounters in Uganda and beyond.
+        </p><br>
+        <div class="tour__btn">
+          <button class="btn">
+            Inquire Now
+            <span><i class="ri-arrow-right-long-line"></i></span>
+          </button>
+        </div><br>
+
+        <div class="video__container" style="position: relative; width: 100%; max-width: 100%; height: auto; padding-bottom: 56.25%; /* 16:9 aspect ratio */ background: #000;">
+          <video
+                  id="hero-video"
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;"
+                  poster="gari-trips-images/gal-14.jpg"
+                  playsinline
+                  preload="metadata"
+          >
+            <source src="gari-trips-images/24-day-adventure.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <button class="btn" id="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 0;">
+            <i class="ri-play-fill" style="font-size: 24px;"></i>
+          </button>
+        </div>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const video = document.getElementById('hero-video');
+            const playButton = document.getElementById('play-button');
+
+            playButton.addEventListener('click', function () {
+              video.play();
+              playButton.style.display = 'none';
+              video.addEventListener('play', () => {
+                playButton.style.display = 'none';
+              });
+              video.addEventListener('pause', () => {
+                if (!video.ended) playButton.style.display = 'flex';
+              });
+              video.addEventListener('ended', () => {
+                playButton.style.display = 'flex';
+              });
+            });
+          });
+        </script>
+      </div>
+    </header>
+
+    <!--transfer of the national game parks-->
+
+    <section class="destination">
+      <div class="section__container destination__container">
+        <h3 class="section__subheader"> Discover Uganda’s Top National Parks — From Bwindi’s Mountain Gorillas to Murchison Falls Wildlife Safaris.
+          Your Perfect East African Adventure Starts Here.</h3>
+        <h2 class="section__header">National Game Parks</h2>
+
+        <div class="destination__grid">
+          <div class="destination__card">
+            <img src="gari-trips-images/bwind-park-img-1.jpg" alt="destination" height="250" width="45" />
+            <div class="destination__card__content">
+              <h4>BWINDI IMPENETRABLE FOREST</h4>
+              <p class="section__description">One of the best safari destinations in Africa and home to nearly half of the world’s
+                remaining mountain gorillas.</p><br>
+              <div class="destination__card__footer">
+                <a href="bwindi-park.html"><button class="btn">
+                  Read More
+                  <span><i class="ri-arrow-right-long-line"></i></span>
+                </button></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="destination__card">
+            <img src="gari-trips-images/destination-8.jpg" alt="destination" height="250" width="45" />
+            <div class="destination__card__content">
+              <h4>MURCHISON FALLS NATIONAL PARK</h4>
+              <p class="section__description">This iconic park is ideal for travelers searching for a Big Five safari in Uganda,
+                combining spectacular wildlife encounters with powerful natural scenery.</p><br>
+              <div class="destination__card__footer">
+                <a href="murchison-falls-park.html"><button class="btn">
+                  Read More
+                  <span><i class="ri-arrow-right-long-line"></i></span>
+                </button></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="destination__card">
+            <img src="gari-trips-images/destination-9.jpg" alt="destination" height="250" width="45" />
+            <div class="destination__card__content">
+              <h4>QUEEN ELIZABETH NATIONAL PARK</h4>
+              <p class="section__description">Uganda’s most visited national park and a key destination for anyone seeking
+                a Big Five safari in East Africa.</p><br>
+              <div class="destination__card__footer">
+                <a href="queen-elizabeth-park.html"><button class="btn">
+                  Read More
+                  <span><i class="ri-arrow-right-long-line"></i></span>
+                </button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="destination__btn">
+          <a href="Adventure.html"><button class="btn">
+            Show All
+            <span><i class="ri-arrow-right-long-line"></i></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--end of the national game park-->
+
+    <!--transfer itineraries-->
+    <section class="blog">
+      <div class="section__container blog__container">
+        <h3 class="section__subheader">You can also customize your own itineraries</h3>
+        <h2 class="section__header">Safari packages</h2>
+        <div class="blog__grid">
+          <div class="blog__card">
+            <img src="gari-trips-images/destination-4.jpg" alt="blog" height="250" width="45"/>
+            <div class="blog__content">
+              <p class="section__description">11-Day Gorilla Trekking & Bwindi, Mgahinga Parks and more</p><br>
+              <p class="section__description">From walking safaris in L.Mburo Park to tracking chimpazees and mountain gorillas
+                trekking in Mgahinga & Bwindi park</p><br>
+              <a href="11-days-gorilla-trekking-itinerary.html"><button class="btn">
+                Read More
+                <span><i class="ri-arrow-right-long-line"></i></span>
+              </button></a>
+            </div>
+          </div>
+
+          <div class="blog__card">
+            <img src="gari-trips-images/package-2.jpg" alt="blog" height="250" width="45"/>
+            <div class="blog__content">
+              <p class="section__description">3-Day Lake Bunyonyi & Ultimate Uganda Safari Adventure.</p><br>
+              <p class="section__description">Embark on a truly unforgettable journey through Uganda’s lush landscapes, vibrant wildlife,
+                and rich cultural heritage</p><br>
+              <a href="3-day-itinerary.html"><button class="btn">
+                Read More
+                <span><i class="ri-arrow-right-long-line"></i></span>
+              </button></a>
+            </div>
+          </div>
+
+          <div class="blog__card">
+            <img src="gari-trips-images/package-3.jpg" alt="blog" height="250" width="45"/>
+            <div class="blog__content">
+              <p class="section__description">6-Day Wildlife, Nature and Culture Adventure.</p><br>
+              <p class="section__description">From the vast savannahs of Queen Elizabeth National Park to the lush forests
+                of Kyambura Gorge, this safari promises unforgettable encounters with wildlife</p><br>
+              <a href="6-day-itinerary.html"><button class="btn">
+                Read More
+                <span><i class="ri-arrow-right-long-line"></i></span>
+              </button></a>
+            </div>
+          </div>
+          <!--added packages-->
+          <div class="blog__card">
+            <img src="gari-trips-images/blogs-10.jpg" alt="blog" height="250" width="45"/>
+            <div class="blog__content">
+              <p class="section__description">6-Day Gorilla Habituation Experience & Wildlife Safari.</p><br>
+              <p class="section__description">Track the iconic shoebill stork, enjoy walking safaris at Lake Mburo, and experience
+                the rare Gorilla Habituation in Bwindi.</p><br>
+              <a href="6-days-gorilla-itinerary.html"><button class="btn">
+                Read More
+                <span><i class="ri-arrow-right-long-line"></i></span>
+              </button></a>
+            </div>
+          </div>
+
+          <div class="blog__card">
+            <img src="gari-trips-images/bwind-park-img-1.jpg" alt="blog" height="250" width="45"/>
+            <div class="blog__content">
+              <p class="section__description">20-Day Gorilla & Ultimate Wildlife Adventure Safari.</p><br>
+              <p class="section__description">gorilla and chimpanzee trekking, golden monkey, shoebill spotting, thrilling game drives,
+                and a white-water rafting adventure.</p><br>
+              <a href="20-days-itinerary.html"><button class="btn">
+                Read More
+                <span><i class="ri-arrow-right-long-line"></i></span>
+              </button></a>
+            </div>
+          </div>
+
+          <div class="blog__card">
+            <img src="gari-trips-images/package-4.jpg" alt="blog" height="250" width="45"/>
+            <div class="blog__content">
+              <p class="section__description">14-Day Uganda Adventure Experience with the Big-5.</p><br>
+              <p class="section__description">Highlights of the safari are; Explore rolling hills, shimmering lakes, and lush
+                greenery while connecting with vibrant local traditions.</p><br>
+              <a href="14-days-itinerary.html"><button class="btn">
+                Read More
+                <span><i class="ri-arrow-right-long-line"></i></span>
+              </button></a>
+            </div>
+          </div>
+        </div>
+        <div class="blog__btn">
+          <a href="package.html"><button class="btn">
+            Read More
+            <span><i class="ri-arrow-right-long-line"></i></span>
+          </button></a>
+        </div>
+      </div>
+    </section>
+    <!--end of itineraries-->
+
+    <section class="about" id="about">
+      <div class="section__container about__container">
+        <div class="about__image">
+          <img src="gari-trips-images/gari-trips-visitors-10.jpg" alt="about" />
+        </div>
+        <div class="about__content">
+          <h2 class="section__header">
+            It's Time For a <span>New Adventure!</span> Don't Wait Any Longer.
+          </h2>
+          <p class="section__description">
+            Welcome to Gari Trips Uganda – your premier gateway to authentic East African safari adventures. Discover
+            mountain gorillas in Bwindi Impenetrable Forest, track chimpanzees in Kibale, and witness the Big Five
+            across Uganda’s legendary national parks. We craft personalized wildlife journeys that ignite wonder and
+            leave lifelong memories.
+          </p>
+          <div class="about__signature">Emmanuel.W.</div>
+        </div>
+      </div>
+    </section>
+
+    <!--<section class="section__container tour__container" id="tour">
+      <h3 class="section__subheader">Tour Type</h3>
+      <h2 class="section__header">Pick A Tour Type</h2>
+      <div class="tour__grid">
+        <div class="tour__card">
+          <img src="assets/tour-1.jpg" alt="tour" />
+          <h4>Forest Adventures</h4>
+          <p>15 Tours+</p>
+        </div>
+        <div class="tour__card">
+          <img src="assets/tour-2.jpg" alt="tour" />
+          <h4>Mountain Climbing</h4>
+          <p>10 Tours+</p>
+        </div>
+        <div class="tour__card">
+          <img src="assets/tour-3.jpg" alt="tour" />
+          <h4>Beach Vacations</h4>
+          <p>18 Tours+</p>
+        </div>
+        <div class="tour__card">
+          <img src="assets/tour-4.jpg" alt="tour" />
+          <h4>City Tours</h4>
+          <p>12 Tours+</p>
+        </div>
+      </div>
+      <div class="tour__btn">
+        <button class="btn">
+          Show All
+          <span><i class="ri-arrow-right-long-line"></i></span>
+        </button>
+      </div>
+    </section>-->
+
+    <!--<section class="destination">
+      <div class="section__container destination__container">
+        <h3 class="section__subheader">Top Destination</h3>
+        <h2 class="section__header">Our Top Destinations</h2>
+        <div class="destination__grid">
+          <div class="destination__card">
+            <img src="assets/destination-1.jpg" alt="destination" />
+            <div class="destination__card__content">
+              <h4>Enjoy the tour of the City of Love</h4>
+              <h5>Paris, France</h5>
+              <div class="destination__card__footer">
+                <h6>$2300</h6>
+                <p>(6 days)</p>
+              </div>
+            </div>
+          </div>
+          <div class="destination__card">
+            <img src="assets/destination-2.jpg" alt="destination" />
+            <div class="destination__card__content">
+              <h4>Enjoy the tour of paradise with pristine beaches</h4>
+              <h5>Bali, Indonesia</h5>
+              <div class="destination__card__footer">
+                <h6>$1800</h6>
+                <p>(7 days)</p>
+              </div>
+            </div>
+          </div>
+          <div class="destination__card">
+            <img src="assets/destination-3.jpg" alt="destination" />
+            <div class="destination__card__content">
+              <h4>Enjoy the tour of luxury and innovation</h4>
+              <h5>Dubai, UAE</h5>
+              <div class="destination__card__footer">
+                <h6>$2500</h6>
+                <p>(5 days)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="destination__btn">
+          <button class="btn">
+            Show All
+            <span><i class="ri-arrow-right-long-line"></i></span>
+          </button>
+        </div>
+      </div>
+    </section>-->
+
+    <section class="section__container review__container">
+      <div class="review__image">
+        <img src="assets/review.png" alt="review" />
+      </div>
+      <div class="review__content">
+        <h3 class="section__subheader">Top Reviews</h3>
+        <h2 class="section__header">Our Valuable Clients Say this...</h2>
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="review__card">
+                <span><i class="ri-double-quotes-l"></i></span>
+                <p class="section__description">
+                  Gari Trips made our dream vacation a reality! From the
+                  breathtaking landscapes to the seamless logistics, every moment was a new adventure. The personalized
+                  itinerary and expert guides added a special touch to our journey. We can't wait to book our next trip
+                  with Gari Trips!
+                </p>
+                <h4>Emily Roberts</h4>
+                <h5>Travel Blogger</h5>
+                <div>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="review__card">
+                <span><i class="ri-double-quotes-l"></i></span>
+                <p class="section__description">
+                  Traveling with the family has never been easier!
+                  Gari Trips took care of every detail, ensuring a stress-free and enjoyable vacation for all. The
+                  kid-friendly activities and family-oriented guides made our trip unforgettable.
+                </p>
+                <h4>Michael Johnson</h4>
+                <h5>Photographer</h5>
+                <div>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="review__card">
+                <span><i class="ri-double-quotes-l"></i></span>
+                <p class="section__description">
+                  Our cultural tour with Gari Trips exceeded all
+                  expectations. The immersive experiences, knowledgeable guides, and carefully curated activities
+                  allowed us to connect with the local culture in a way we never thought possible. Thanks to
+                  Gari Trips.
+                </p>
+                <h4>Sophia Lee</h4>
+                <h5>Business Consultant</h5>
+                <div>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog">
+      <div class="section__container blog__container">
+        <h3 class="section__subheader"> Best Safari Deals in Rwanda, Kenya & Tanzania — Book Family Gorilla Camps, Grand Wildlife Expeditions, or
+          Honeymoon Safaris with Expert Local Guides. Save Up to 20%!</h3>
+        <h2 class="section__header">Our Events packages</h2>
+        <div class="blog__grid">
+          <div class="blog__card">
+            <img src="gari-trips-images/events-pic-1.jpg" alt="blog" />
+            <div class="blog__content">
+              <h4>Kids’ Wildlife Explorer Camp</h4>
+              <p class="section__description">Fun, educational safari adventures for children to discover Uganda’s animals,
+                tracks, and conservation in safe, guided tours.</p><br>
+              <a href="contact.html"><button class="btn">
+                Inquire Now
+                <span><i class="ri-arrow-right-long-line"></i></span>
+              </button></a>
+            </div>
+          </div>
+          <div class="blog__card">
+            <img src="gari-trips-images/events-pic-2.jpg" alt="blog" />
+            <div class="blog__content">
+              <h4>East Africa Grand Safari Expedition</h4>
+              <p class="section__description">An epic 7-day journey through Uganda’s parks—gorillas, lions, elephants—for adventurers
+                of all ages and experience levels.</p><br>
+              <a href="contact.html"><button class="btn">
+                Inquire Now
+                <span><i class="ri-arrow-right-long-line"></i></span>
+              </button></a>
+            </div>
+          </div>
+          <div class="blog__card">
+            <img src="gari-trips-images/events-pic-3.jpg" alt="blog" />
+            <div class="blog__content">
+              <h4>Honeymoon Gorilla & Nile Escape</h4>
+              <p class="section__description">Romantic luxury safari for newlyweds: private gorilla trekking, sunset Nile cruises,
+                and candlelit dinners in the wild.</p><br>
+              <a href="contact.html"><button class="btn">
+                Inquire Now
+                <span><i class="ri-arrow-right-long-line"></i></span>
+              </button></a>
+            </div>
+          </div>
+        </div>
+        <!--<div class="blog__btn">
+          <button class="btn">
+            Show All
+            <span><i class="ri-arrow-right-long-line"></i></span>
+          </button>
+        </div>-->
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section" style="padding: 30px 0; background-color: #f8f9fa; text-align: center;">
+      <h3 style="margin-bottom: 20px; color: #333; font-weight: 600;">Our Trusted Partners</h3>
+      <div class="partners-logos" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; align-items:
+  center; max-width: 900px; margin: 0 auto;">
+
+        <!-- SafariBookings -->
+        <a href="https://www.safaribookings.com/?utm_source=safaribookings&utm_medium=email" target="_blank" rel="noopener
+    noreferrer" title="SafariBookings">
+          <img src="gari-trips-images/safari-bookings-logo.png" alt="SafariBookings"
+               style="height: 40px; filter: grayscale(0%); transition: filter 0.2s;" onmouseover="this.style.filter='grayscale(20%)'"
+               onmouseout="this.style.filter='grayscale(0%)'">
+        </a>
+
+        <!-- TripAdvisor -->
+        <a href="https://www.tripadvisor.com" target="_blank" rel="noopener noreferrer" title="TripAdvisor">
+          <img src="gari-trips-images/trip-advisor.jfif" alt="TripAdvisor"
+               style="height: 40px; filter: grayscale(0%); transition: filter 0.2s;" onmouseover="this.style.filter='grayscale(20%)'"
+               onmouseout="this.style.filter='grayscale(0%)'">
+        </a>
+
+        <!-- Uganda Tourism Board -->
+        <a href="https://www.visituganda.com" target="_blank" rel="noopener noreferrer" title="Uganda Tourism Board">
+          <img src="gari-trips-images/uganda-tourism-board-logo.png" alt="Uganda Tourism Board"
+               style="height: 40px; object-fit: contain; filter: grayscale(0%); transition: filter 0.2s;"
+               onmouseover="this.style.filter='grayscale(20%)'" onmouseout="this.style.filter='grayscale(0%)'">
+        </a>
+
+        <!-- Uganda Wildlife Authority -->
+        <a href="https://ugandawildlife.org" target="_blank" rel="noopener noreferrer" title="Uganda Wildlife Authority">
+          <img src="gari-trips-images/uganda-wildlife-logo.png" alt="Uganda Wildlife Authority"
+               style="height: 40px; object-fit: contain; filter: grayscale(0%); transition: filter 0.2s;"
+               onmouseover="this.style.filter='grayscale(20%)'" onmouseout="this.style.filter='grayscale(0%)'">
+        </a>
+
+      </div>
+    </section>
+
+    <style>
+      /* Optional: Add this to your main CSS if you prefer a stylesheet */
+      .partners-section {
+        padding: 30px 0;
+        background-color: #f8f9fa;
+        text-align: center;
+      }
+      .partners-logos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-items: center;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .partners-logos img {
+        height: 40px;
+        object-fit: contain;
+        filter: grayscale(0%);
+        transition: filter 0.2s ease;
+      }
+      .partners-logos img:hover {
+        filter: grayscale(20%);
+      }
+      .partners-logos a {
+        display: inline-block;
+      }
+    </style>
+
+    <section class="banner">
+      <div class="banner__wrapper">
+        <img src="gari-trips-images/gallery-4.jpg" alt="banner" />
+        <img src="gari-trips-images/communities-pic-1.jpg" alt="banner" />
+        <img src="gari-trips-images/gal-7.jpg" alt="banner" />
+        <img src="gari-trips-images/Tea-tours-in-Uganda.jpg" alt="banner" />
+        <img src="gari-trips-images/destination-12.jpg" alt="banner" />
+        <img src="gari-trips-images/gal-6.jpg" alt="banner" />
+        <img src="gari-trips-images/gallery-6.jpg" alt="banner" />
+        <img src="gari-trips-images/gallery-7.jpg" alt="banner" />
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__logo">
+          <img src="gari-trips-images/gari-trips-logo-black.png" alt="logo" />
+        </div>
+        <ul class="footer__links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#tour">Safari Packages</a></li>
+          <li><a href="#tour">National Parks</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ul>
+        <ul class="footer__links">
+          <li><a href="mailto:info@garitripsuganda.com" class="text-nowrap" data-lang="footer_email">info@garitripsuganda.com</a></li>
+          <li><a href="tel:+256 704 018220" class="text-nowrap" data-lang="footer_phone">+256 704 018 220</a></li>
+          <li><a href="address">Gari House - Kansanga (opp. Boston International school) </a></li>
+          <!--<li><a href="#tour">National Parks</a></li>-->
+          <!--<li><a href="#contact">Contact us</a></li>-->
+        </ul>
+
+        <ul class="footer__socials">
+          <li>
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-linkedin-fill"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2025 Gari Trips Uganda. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
