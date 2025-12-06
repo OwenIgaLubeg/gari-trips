@@ -63,7 +63,7 @@
 }
 
 .btn:hover {
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 img {
@@ -185,7 +185,7 @@ nav {
   flex-direction: column;
   flex-wrap: wrap;
   border-radius: 1rem;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .header__content .input__group {
@@ -248,7 +248,7 @@ nav {
 .about__image img {
   border: 0.75rem solid var(--white);
   border-radius: 0.5rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .about__image::before {
@@ -292,7 +292,7 @@ nav {
 }
 
 .tour__card:hover {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .tour__card img {
@@ -344,7 +344,7 @@ nav {
 }
 
 .destination__card:hover {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .destination__card img {
@@ -389,7 +389,7 @@ nav {
   background-color: transparent;
   z-index: -1;
   border-bottom-left-radius: 0.5rem;
-  box-shadow: -0.25rem 0.25rem 0 0.25rem var(--white);
+  box-shadow: -0.15rem 0.45rem 0 0.45rem var(--white);
 }
 
 .destination__card__content h5 {
@@ -423,60 +423,6 @@ nav {
   justify-content: center;
 }
 
-.review__container {
-  display: grid;
-  gap: 2rem;
-}
-
-.review__image img {
-  max-width: 400px;
-  margin-inline: auto;
-}
-
-.review__content {
-  overflow: hidden;
-}
-
-.swiper {
-  width: 100%;
-  margin-top: 2rem;
-}
-
-.review__card > span {
-  display: inline-block;
-  font-size: 5rem;
-  color: var(--primary-color); /* ← Updated */
-}
-
-.review__card .section__description {
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.review__card h4 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.review__card h5 {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-light);
-}
-
-.review__card > div {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.review__card > div > span {
-  font-size: 1rem;
-  color: goldenrod;
-}
 
 .blog {
   background-color: var(--extra-light);
@@ -496,7 +442,7 @@ nav {
 }
 
 .blog__card:hover {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .blog__card img {
@@ -704,22 +650,6 @@ nav {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .review__container {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-  }
-
-  .review__image {
-    grid-area: 1/2/2/3;
-  }
-
-  .review__content :is(.section__subheader, .section__header) {
-    text-align: left;
-  }
-
-  .review__content .section__header {
-    max-width: 400px;
-  }
 
   .blog__grid {
     grid-template-columns: repeat(3, 1fr);
@@ -747,4 +677,329 @@ nav {
     padding: 1.5rem;
     padding-bottom: 2rem;
   }
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    min-width: 200px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-menu li {
+    padding: 0.5rem 1.25rem;
+  }
+
+  .dropdown-menu a {
+    color: var(--text-dark) !important;
+    font-weight: 500;
+  }
+
+  .dropdown-menu a:hover {
+    color: var(--primary-color) !important;
+    background-color: rgba(163, 223, 130, 0.1);
+  }
+
 }
+/* ========== FAQ SECTION — CORRECTLY PLACED ========== */
+
+.faq-section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.faq-section .section__title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  color: #001f3f;
+}
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accordion {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.accordion__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.accordion__header:hover {
+  background-color: #f9f9f9;
+}
+
+.accordion__question {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #001f3f;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.accordion__icon {
+  font-size: 1.5rem;
+  color: #001f3f;
+  transition: transform 0.3s ease;
+}
+
+.accordion.active .accordion__icon {
+  transform: rotate(45deg);
+}
+
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.accordion.active .accordion__content {
+  max-height: 600px;
+  padding: 0 20px 24px;
+}
+
+.accordion__answer {
+  margin: 0;
+  color: #62748e;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.accordion__header:focus {
+  outline: 2px solid rgb(186, 222, 42);
+  outline-offset: 2px;
+}
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 0 15px;
+    margin: 50px auto;
+  }
+
+  .faq-section .section__title {
+    font-size: 1.9rem;
+    margin-bottom: 32px;
+  }
+
+  .accordion {
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .accordion__header {
+    padding: 18px 16px;
+  }
+
+  .accordion__question {
+    font-size: 1.15rem;
+    line-height: 1.45;
+  }
+
+  .accordion__icon {
+    font-size: 1.4rem;
+  }
+
+  .accordion.active .accordion__content {
+    padding: 0 16px 20px;
+  }
+
+  .accordion__answer {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .faq-section {
+    padding: 0 12px;
+    margin: 40px auto;
+  }
+
+  .faq-section .section__title {
+    font-size: 1.65rem;
+    margin-bottom: 28px;
+  }
+
+  .accordion__header {
+    padding: 16px 12px;
+  }
+
+  .accordion__question {
+    font-size: 1.05rem;
+  }
+
+  .accordion__icon {
+    font-size: 1.3rem;
+  }
+
+  .accordion.active .accordion__content {
+    padding: 0 12px 18px;
+  }
+
+  .accordion__answer {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 768px) {
+  .nav__logo a img {
+    max-width: 80px !important;
+  }
+  .section__container:first-of-type,
+  main > *:first-child,
+  .hero-video-container,
+  .contact-form-container,
+  .itinerary-container,
+  .gallery-wrapper,
+  .content-wrapper,
+  .section__container header__container,
+  .bwindi-container,
+  .video-overlay,
+  .background-video,
+  .trip,
+  .section__container trip__container,
+  .contact-page-container,
+  .container,
+  .header__container {
+    margin-top: 85px;
+  }
+  /* ---------------------------
+    NAVBAR MOBILE FIXES (safe)
+    Paste this inside/at end of @media (max-width: 768px)
+  --------------------------- */
+
+   /* 1) Shrink logo on mobile */
+  .nav__logo a img {
+    max-width: 75px !important; /* slightly smaller than your 80 */
+    height: auto;
+    transition: max-width 0.25s ease;
+  }
+
+  /* 2) Ensure navbar stays fixed and create consistent gap below header content */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    /* keep your navbar background; padding handled by .nav__header */
+  }
+
+  /* Create a consistent safe offset for page content on mobile only.
+     1.0cm margin gap + 1.0cm visual padding ~ adjust px equivalent (1cm ≈ 37px depending on DPI).
+     Use 38px for 1cm; combine nav internal padding + this gap => 80-95px works well.
+  */
+  body {
+    padding-top: 95px; /* mobile only; keeps header content below navbar */
+  }
+
+  /* 3) Mobile menu placement: drop-down from below navbar (no overlapping) */
+  .nav__links {
+    position: absolute;
+    top: 100%;         /* places menu immediately below navbar */
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 12px 16px; /* 1.0cm inner padding equivalent ~ use px */
+    background-color: rgb(197, 255, 190);
+    transform: translateY(-12px); /* slightly hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.28s ease, opacity 0.28s ease, visibility 0.28s;
+    z-index: 9998; /* above page content */
+  }
+
+  /* visible/open state */
+  .nav__links.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* 4) Make links touch-friendly */
+  .nav__links a {
+    display: block;
+    padding: 10px 6px;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+  }
+
+  /* 5) Ensure menu button visible and easy to tap */
+  .nav__menu__btn {
+    font-size: 1.9rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 6px;
+    line-height: 1;
+  }
+
+  /* 6) Remove any negative z-index that would hide element (be safe) */
+  .nav__links[style*="z-index:-1"] {
+    z-index: 9998 !important;
+  }
+
+    .dropdown-menu {
+      display: none;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 1rem 0;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.5rem 1.5rem !important;
+      color: var(--text-dark) !important;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      color: var(--primary-color) !important;
+      background: transparent !important;
+    }
+
+  /* 7) Avoid margin-top hacks on many selectors: if you still have
+     earlier scattered margin-top rules, consider removing them.
+     The single body padding-top above is the robust solution. */
+
+}
+
