@@ -1,8 +1,10 @@
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
+const dropdown = document.querySelector(".dropdown");
+const dropdownLink = dropdown ? dropdown.querySelector(".dropdown-link") : null;
 
-menuBtn.addEventListener("click", (e) => {
+menuBtn.addEventListener("click", () => {
   navLinks.classList.toggle("open");
 
   const isOpen = navLinks.classList.contains("open");
@@ -10,11 +12,38 @@ menuBtn.addEventListener("click", (e) => {
     "class",
     isOpen ? "ri-close-line" : "ri-menu-3-line"
   );
+
+  // When reopening the menu, start with Services submenu collapsed
+  if (!isOpen && dropdown) {
+    dropdown.classList.remove("open");
+  }
 });
 
 navLinks.addEventListener("click", (e) => {
-  navLinks.classList.remove("open");
-  menuBtnIcon.setAttribute("class", "ri-menu-3-line");
+  const target = e.target;
+
+  // Toggle Services dropdown on mobile when its label is tapped
+  if (dropdownLink && target.closest(".dropdown-link")) {
+    e.preventDefault();
+    e.stopPropagation();
+    dropdown.classList.toggle("open");
+    return;
+  }
+
+  // If a link inside the dropdown menu is clicked, close everything
+  if (target.closest(".dropdown-menu a")) {
+    navLinks.classList.remove("open");
+    menuBtnIcon.setAttribute("class", "ri-menu-3-line");
+    if (dropdown) dropdown.classList.remove("open");
+    return;
+  }
+
+  // Any other link inside the nav closes the mobile menu
+  if (target.closest("a")) {
+    navLinks.classList.remove("open");
+    menuBtnIcon.setAttribute("class", "ri-menu-3-line");
+    if (dropdown) dropdown.classList.remove("open");
+  }
 });
 
 const scrollRevealOption = {

@@ -878,24 +878,6 @@ nav {
   .nav__logo a img {
     max-width: 80px !important;
   }
-  .section__container:first-of-type,
-  main > *:first-child,
-  .hero-video-container,
-  .contact-form-container,
-  .itinerary-container,
-  .gallery-wrapper,
-  .content-wrapper,
-  .section__container header__container,
-  .bwindi-container,
-  .video-overlay,
-  .background-video,
-  .trip,
-  .section__container trip__container,
-  .contact-page-container,
-  .container,
-  .header__container {
-    margin-top: 85px;
-  }
   /* ---------------------------
     NAVBAR MOBILE FIXES (safe)
     Paste this inside/at end of @media (max-width: 768px)
@@ -926,29 +908,30 @@ nav {
     padding-top: 95px; /* mobile only; keeps header content below navbar */
   }
 
-  /* 3) Mobile menu placement: drop-down from below navbar (no overlapping) */
+  /* 3) Mobile menu placement: left side drawer (Facebook-style) */
   .nav__links {
-    position: absolute;
-    top: 100%;         /* places menu immediately below navbar */
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%;
+    height: 100vh;
+    width: 75%;
+    max-width: 320px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 12px 16px; /* 1.0cm inner padding equivalent ~ use px */
+    padding: 80px 16px 24px; /* leave room for fixed navbar area */
     background-color: rgb(197, 255, 190);
-    transform: translateY(-12px); /* slightly hidden by default */
-    opacity: 0;
-    visibility: hidden;
-    transition: transform 0.28s ease, opacity 0.28s ease, visibility 0.28s;
-    z-index: 9998; /* above page content */
+    transform: translateX(-100%); /* hidden off-screen by default */
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 4px 0 14px rgba(0, 0, 0, 0.25);
+    transition: transform 0.28s ease;
+    z-index: 9998; /* below nav header but above page content */
   }
 
   /* visible/open state */
   .nav__links.open {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
+    transform: translateX(0);
   }
 
   /* 4) Make links touch-friendly */
@@ -975,27 +958,31 @@ nav {
     z-index: 9998 !important;
   }
 
-    .dropdown-menu {
-      display: none;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 1rem 0;
-      border-radius: 8px;
-      margin-top: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
+  .dropdown-menu {
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 0;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
 
-    .dropdown-menu a {
-      display: block;
-      padding: 0.5rem 1.5rem !important;
-      color: var(--text-dark) !important;
-      font-weight: 500;
-      white-space: nowrap;
-    }
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
 
-    .dropdown-menu a:hover {
-      color: var(--primary-color) !important;
-      background: transparent !important;
-    }
+  .dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1.5rem !important;
+    color: var(--text-dark) !important;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .dropdown-menu a:hover {
+    color: var(--primary-color) !important;
+    background: transparent !important;
+  }
 
   /* 7) Avoid margin-top hacks on many selectors: if you still have
      earlier scattered margin-top rules, consider removing them.
