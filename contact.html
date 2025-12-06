@@ -294,24 +294,27 @@
     <!-- Right: Contact Form -->
     <div class="contact-form-container" style="flex: 1; max-width: none;" data-aos="fade-left">
         <h1 data-lang="contact_form_title">Send a Message</h1>
+
         <form
                 name="contact"
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
+                action="/success.html"
                 class="contact-form"
         >
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="contact" />
+            <!-- Required by Netlify -->
+            <input type="hidden" name="form-name" value="contact">
+            <input type="hidden" name="bot-field">
 
             <div class="input-wrapper">
                 <i class="fa-solid fa-user form-icon"></i>
-                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="text" name="name" placeholder="Your Name" required>
             </div>
 
             <div class="input-wrapper">
                 <i class="fa-solid fa-envelope form-icon"></i>
-                <input type="email" name="email" placeholder="Your Email" required />
+                <input type="email" name="email" placeholder="Your Email" required>
             </div>
 
             <div class="input-wrapper">
@@ -325,6 +328,7 @@
             </div>
         </form>
     </div>
+
 </div>
 
 <!--another--form & logo-->

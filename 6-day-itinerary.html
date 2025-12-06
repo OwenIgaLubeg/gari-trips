@@ -345,27 +345,52 @@
 
             <!-- Netlify Inquiry Form -->
             <div id="inquiry-form">
-                <h2>Make a Booking Inquiry</h2>
+                <br><h2>Make a Booking Inquiry</h2>
                 <div class="inquiry-form-box">
-                    <form name="itinerary-inquiry" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-                        <input type="hidden" name="form-name" value="itinerary-inquiry" />
-                        <input type="hidden" name="bot-field" />
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+
+                    <form
+                            name="itinerary-inquiry"
+                            method="POST"
+                            data-netlify="true"
+                            data-netlify-honeypot="bot-field"
+                            action="/success.html"
+                            class="contact-form"
+                    >
+                        <!-- Hidden fields required by Netlify -->
+                        <input type="hidden" name="form-name" value="itinerary-inquiry">
+                        <input type="hidden" name="bot-field">
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-user form-icon"></i>
+                            <input type="text" name="name" placeholder="Your Name" required />
                         </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-envelope form-icon"></i>
+                            <input type="email" name="email" placeholder="Your Email" required />
                         </div>
-                        <div class="form-group">
-                            <input type="text" name="trip" value="6-Day Wildlife, Nature and Culture Adventure" readonly>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-map-location-dot form-icon"></i>
+                            <input type="text" name="trip" value="3-day-itinerary" readonly />
                         </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message (dates, group size, special requests, etc.)" required></textarea>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-message form-icon textarea-icon"></i>
+                            <textarea name="message"
+                                      placeholder="Your Message (dates, group size, special requests, etc.)"
+                                      required></textarea>
                         </div>
-                        <button type="submit" class="theme-btn"><span>Send Inquiry</span></button>
+
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-style">Send Inquiry</button>
+                            <button type="button" onclick="window.location.href='index.html'" class="btn btn-style">Back</button>
+                        </div>
+
                     </form>
                 </div>
             </div>
+
 
         </div>
     </div>

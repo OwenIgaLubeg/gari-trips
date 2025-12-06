@@ -214,6 +214,97 @@
             order: -1; /* move video above content on mobile */
           }
         }
+        /* Contact Section */
+.contact-section {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #ffffff;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.phone-contact {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* Form container */
+.contact-section form {
+    width: 100%;
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 18px;
+}
+
+/* Labels */
+.form-group label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Inputs */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.25s ease;
+    background: #fff;
+}
+
+/* Inputs Focus */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #0077cc;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+}
+
+/* Textarea */
+.form-group textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* Submit Button */
+.theme-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    color: #fff;
+    background: #0077cc;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.theme-btn:hover {
+    background: #005fa3;
+}
+
+.theme-btn span {
+    font-weight: 600;
+}
+
     </style>
 </head>
 <body>
@@ -293,36 +384,46 @@
         </section><br>
 
         <!-- Contact Section -->
-        <br><section id="contact" class="contact-section">
-            <h2>Contact Us</h2><br>
-            <p class="phone-contact">Call us: <strong>+256 704 018220</strong></p>
-            <form
-                    id="contact-form"
-                    name="car-services-contact"
-                    method="POST"
-                    data-netlify="true"
-                    data-netlify-honeypot="bot-field"
-            >
-                <input type="hidden" name="form-name" value="car-services-contact" />
-                <p hidden>
-                    <label>Don’t fill this out: <input name="bot-field" /></label>
-                </p>
+        <br><section id="contact.html" class="contact-section">
+        <h2>Contact Us</h2><br>
+        <p class="phone-contact">Call us: <strong>+256 704 018220</strong></p>
 
+        <form
+                name="car-services-contact"
+                method="POST"
+                action="/success.html"
+                netlify
+                netlify-honeypot="bot-field"
+        >
+            <input type="hidden" name="form-name" value="car-services-contact" />
+            <input type="hidden" name="bot-field" />
+
+            <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required />
+            </div>
 
+            <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" required />
+            </div>
 
+            <div class="form-group">
                 <label for="phone">Phone (Optional)</label>
                 <input type="tel" id="phone" name="phone" />
+            </div>
 
+            <div class="form-group">
                 <label for="message">Your Message</label>
                 <textarea id="message" name="message" required></textarea>
+            </div>
 
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
+            <button type="submit" class="theme-btn">
+                <span>Send Message</span>
+            </button>
+        </form>
+    </section>
+
     </div>
 
     <!-- Sidebar: Video -->
